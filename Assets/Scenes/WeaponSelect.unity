@@ -597,8 +597,8 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 1036437987}
-        m_TargetAssemblyTypeName: WeaponSelect, Assembly-CSharp
-        m_MethodName: PlayGame
+        m_TargetAssemblyTypeName: CanvasManager, Assembly-CSharp
+        m_MethodName: NextScene
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -730,8 +730,8 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 1036437987}
-        m_TargetAssemblyTypeName: WeaponSelect, Assembly-CSharp
-        m_MethodName: BackToTitleScreen
+        m_TargetAssemblyTypeName: CanvasManager, Assembly-CSharp
+        m_MethodName: PreviousScene
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -942,7 +942,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 1036437981}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 30daaff3715622b40a65beaa5e287340, type: 3}
+  m_Script: {fileID: 11500000, guid: 434cbb2db1a8ee2448d3853308f0be33, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1 &1322834455
