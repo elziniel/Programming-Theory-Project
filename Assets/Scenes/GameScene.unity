@@ -178,6 +178,13 @@ MonoBehaviour:
     UseConstant: 1
     ConstantValue: 50
     Variable: {fileID: 0}
+  DeathEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  RotationSpeed:
+    UseConstant: 1
+    ConstantValue: 75
+    Variable: {fileID: 0}
   DamageEvent:
     m_PersistentCalls:
       m_Calls:
@@ -193,13 +200,6 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-  DeathEvent:
-    m_PersistentCalls:
-      m_Calls: []
-  RotationSpeed:
-    UseConstant: 1
-    ConstantValue: 75
-    Variable: {fileID: 0}
 --- !u!136 &58260403
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -482,8 +482,8 @@ GameObject:
   - component: {fileID: 359249498}
   - component: {fileID: 359249500}
   - component: {fileID: 359249499}
-  - component: {fileID: 359249502}
   - component: {fileID: 359249501}
+  - component: {fileID: 359249502}
   m_Layer: 5
   m_Name: Health
   m_TagString: Untagged
@@ -530,7 +530,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'Health: '
+  m_text: 'Health:'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -621,7 +621,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4ec971fb12ce33046a31e2c65d46431c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Text: 'Health: '
+  Text: 'Health:'
   Value:
     UseConstant: 0
     ConstantValue: 0
@@ -787,6 +787,7 @@ GameObject:
   - component: {fileID: 616356904}
   - component: {fileID: 616356903}
   - component: {fileID: 616356905}
+  - component: {fileID: 616356906}
   m_Layer: 5
   m_Name: Score
   m_TagString: Untagged
@@ -833,7 +834,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'Score: '
+  m_text: 'Score:'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -924,11 +925,39 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4ec971fb12ce33046a31e2c65d46431c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Text: 'Score: '
+  Text: 'Score:'
   Value:
     UseConstant: 0
     ConstantValue: 0
     Variable: {fileID: 11400000, guid: 21698efbc7a6c884c9aeb1b38995da97, type: 2}
+--- !u!114 &616356906
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 616356901}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 87cc7cd178514914e9402e3ea436feae, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Event: {fileID: 11400000, guid: 95a5c243d09652148996b64d3893fae7, type: 2}
+  Response:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 616356905}
+        m_TargetAssemblyTypeName: TextManager, Assembly-CSharp
+        m_MethodName: UpdateText
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &736178923
 GameObject:
   m_ObjectHideFlags: 0
@@ -967,19 +996,28 @@ MonoBehaviour:
     ConstantValue: 1
     Variable: {fileID: 0}
   Health:
-    UseConstant: 1
+    UseConstant: 0
     ConstantValue: 0
-    Variable: {fileID: 0}
+    Variable: {fileID: 11400000, guid: 6d7e687d13990e147a339e8fe390f6af, type: 2}
   Speed:
     UseConstant: 1
     ConstantValue: 25
     Variable: {fileID: 0}
-  DamageEvent:
-    m_PersistentCalls:
-      m_Calls: []
   DeathEvent:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 11400000, guid: 95a5c243d09652148996b64d3893fae7, type: 2}
+        m_TargetAssemblyTypeName: GameEvent, Assembly-CSharp
+        m_MethodName: Raise
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &736178925
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1079,7 +1117,7 @@ Transform:
   m_GameObject: {fileID: 736178923}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -5, y: 0, z: -0.5}
+  m_LocalPosition: {x: 0, y: 1, z: -0.5}
   m_LocalScale: {x: 0.25, y: 0.25, z: 0.25}
   m_ConstrainProportionsScale: 1
   m_Children: []

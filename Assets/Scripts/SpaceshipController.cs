@@ -42,6 +42,10 @@ public class SpaceshipController : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        spaceship.TakeDamage(other.gameObject.GetComponent<DamageDealer>().DamageAmount);
+        if (other.TryGetComponent<DamageDealer>(out var damage))
+        {
+            spaceship.TakeDamage(-damage.DamageAmount);
+            other.GetComponent<Entity>().TakeDamage(-spaceship.GetComponent<DamageDealer>().DamageAmount);
+        }
     }
 }

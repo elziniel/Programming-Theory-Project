@@ -10,6 +10,6 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 666a28b7ba49d5e43a796248ce684a1e, type: 3}
-  m_Name: Health
+  m_Name: SpacerockHealth
   m_EditorClassIdentifier: 
   Value: 0

@@ -1,16 +1,12 @@
-using UnityEngine;
-
 public class Spacerock : Entity
 {
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
+    public override void TakeDamage(float amount)
     {
-
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-
+        base.TakeDamage(amount);
+        if (Health <= 0)
+        {
+            Destroy(gameObject);
+            DeathEvent.Invoke();
+        }
     }
 }
