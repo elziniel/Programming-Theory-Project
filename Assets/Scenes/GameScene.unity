@@ -771,6 +771,7 @@ GameObject:
   - component: {fileID: 616356904}
   - component: {fileID: 616356903}
   - component: {fileID: 616356905}
+  - component: {fileID: 616356907}
   - component: {fileID: 616356906}
   m_Layer: 5
   m_Name: Score
@@ -930,6 +931,18 @@ MonoBehaviour:
   Response:
     m_PersistentCalls:
       m_Calls:
+      - m_Target: {fileID: 616356907}
+        m_TargetAssemblyTypeName: ScoreManager, Assembly-CSharp
+        m_MethodName: OnScoreUpdated
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 736178923}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
       - m_Target: {fileID: 616356905}
         m_TargetAssemblyTypeName: TextManager, Assembly-CSharp
         m_MethodName: UpdateText
@@ -942,6 +955,19 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+--- !u!114 &616356907
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 616356901}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6ab4d622e022c5541b57e9adfab45c61, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Score: {fileID: 11400000, guid: 21698efbc7a6c884c9aeb1b38995da97, type: 2}
 --- !u!1 &736178923
 GameObject:
   m_ObjectHideFlags: 0
