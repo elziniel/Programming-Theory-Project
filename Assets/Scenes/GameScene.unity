@@ -134,7 +134,6 @@ GameObject:
   - component: {fileID: 58260407}
   - component: {fileID: 58260402}
   - component: {fileID: 58260401}
-  - component: {fileID: 58260408}
   m_Layer: 0
   m_Name: Spaceship
   m_TagString: Untagged
@@ -170,13 +169,14 @@ MonoBehaviour:
     UseConstant: 1
     ConstantValue: 3
     Variable: {fileID: 0}
-  Health:
-    UseConstant: 0
-    ConstantValue: 0
-    Variable: {fileID: 11400000, guid: b839cde8e2d366c4aac4089c080f3e5f, type: 2}
+  Health: {fileID: 11400000, guid: b839cde8e2d366c4aac4089c080f3e5f, type: 2}
   Speed:
     UseConstant: 1
     ConstantValue: 50
+    Variable: {fileID: 0}
+  DamageAmount:
+    UseConstant: 1
+    ConstantValue: 1
     Variable: {fileID: 0}
   DeathEvent:
     m_PersistentCalls:
@@ -318,22 +318,6 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
---- !u!114 &58260408
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 58260400}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fdd2f4d8e1e32bb499eb6079a81027d6, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  DamageAmount:
-    UseConstant: 1
-    ConstantValue: 1
-    Variable: {fileID: 0}
 --- !u!1 &330585543
 GameObject:
   m_ObjectHideFlags: 0
@@ -970,7 +954,6 @@ GameObject:
   - component: {fileID: 736178928}
   - component: {fileID: 736178927}
   - component: {fileID: 736178926}
-  - component: {fileID: 736178925}
   - component: {fileID: 736178924}
   m_Layer: 0
   m_Name: Spacerock
@@ -995,13 +978,14 @@ MonoBehaviour:
     UseConstant: 1
     ConstantValue: 1
     Variable: {fileID: 0}
-  Health:
-    UseConstant: 0
-    ConstantValue: 0
-    Variable: {fileID: 11400000, guid: 6d7e687d13990e147a339e8fe390f6af, type: 2}
+  Health: {fileID: 11400000, guid: 6d7e687d13990e147a339e8fe390f6af, type: 2}
   Speed:
     UseConstant: 1
     ConstantValue: 25
+    Variable: {fileID: 0}
+  DamageAmount:
+    UseConstant: 1
+    ConstantValue: 1
     Variable: {fileID: 0}
   DeathEvent:
     m_PersistentCalls:
@@ -1018,21 +1002,9 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
---- !u!114 &736178925
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 736178923}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fdd2f4d8e1e32bb499eb6079a81027d6, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  DamageAmount:
+  ScoreValue:
     UseConstant: 1
-    ConstantValue: 1
+    ConstantValue: 10
     Variable: {fileID: 0}
 --- !u!65 &736178926
 BoxCollider:

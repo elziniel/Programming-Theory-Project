@@ -4,7 +4,7 @@ using UnityEngine.Events;
 public class GameEventListener : MonoBehaviour
 {
     public GameEvent Event;
-    public UnityEvent Response;
+    public UnityEvent<GameObject> Response;
 
     private void OnEnable()
     {
@@ -18,6 +18,6 @@ public class GameEventListener : MonoBehaviour
 
     public void OnEventRaised()
     {
-        Response.Invoke();
+        Response.Invoke(gameObject);
     }
 }

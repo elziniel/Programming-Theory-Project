@@ -35,17 +35,17 @@ public class SpaceshipController : MonoBehaviour
         if (Input.GetButtonDown("Jump"))
         {
             Debug.Log("Damage taken");
-            spaceship.Health.Variable.ApplyChange(-1);
+            spaceship.Health.ApplyChange(-1);
             spaceship.DamageEvent.Invoke();
         }
     }
 
     private void OnTriggerEnter(Collider other)
     {
-        if (other.TryGetComponent<DamageDealer>(out var damage))
+        if (other.TryGetComponent<Entity>(out var entity))
         {
-            spaceship.TakeDamage(-damage.DamageAmount);
-            other.GetComponent<Entity>().TakeDamage(-spaceship.GetComponent<DamageDealer>().DamageAmount);
+            spaceship.TakeDamage(-entity.DamageAmount);
+            entity.TakeDamage(-spaceship.DamageAmount);
         }
     }
 }

@@ -11,7 +11,7 @@ public class Spaceship : Entity
         base.TakeDamage(amount);
         DamageEvent.Invoke();
 
-        if (Health <= 0)
+        if (Health.Value <= 0)
         {
             DeathEvent.Invoke();
         }
