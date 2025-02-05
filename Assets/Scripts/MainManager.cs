@@ -5,8 +5,8 @@ public class MainManager : MonoBehaviour
 {
     // ENCAPSULATION
     public static MainManager Instance { get; private set; }
-    private readonly float xBound = 9.1f;
-    private readonly float yBound = 5.1f;
+    public float xBound;
+    public float yBound;
 
     private void Awake()
     {
@@ -20,16 +20,9 @@ public class MainManager : MonoBehaviour
         DontDestroyOnLoad(gameObject);
     }
 
-    // ABSTRACTION
-    public void StayInBounds(Transform transform)
+    private void Start()
     {
-        if (Math.Abs(transform.position.x) > xBound)
-        {
-            transform.position = new(-(Math.Sign(transform.position.x) * xBound), transform.position.y, transform.position.z);
-        }
-        if (Math.Abs(transform.position.y) > yBound)
-        {
-            transform.position = new(transform.position.x, -(Math.Sign(transform.position.y) * yBound), transform.position.z);
-        }
+        xBound = Camera.main.ScreenToWorldPoint(new Vector3(Screen.width, Screen.height)).x;
+        yBound = Camera.main.ScreenToWorldPoint(new Vector3(Screen.width, Screen.height)).y;
     }
 }

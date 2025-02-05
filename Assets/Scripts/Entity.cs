@@ -19,11 +19,6 @@ public abstract class Entity : MonoBehaviour
         EntityRb = GetComponent<Rigidbody>();
     }
 
-    private void Update()
-    {
-        MainManager.Instance.StayInBounds(transform);
-    }
-
     // POLYMORPHISM
     public virtual void TakeDamage(float amount)
     {

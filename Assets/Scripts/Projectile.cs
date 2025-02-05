@@ -1,5 +1,6 @@
 using UnityEngine;
 
+[RequireComponent(typeof(Rigidbody))]
 public class Projectile : MonoBehaviour
 {
     private float Speed;
@@ -20,9 +21,8 @@ public class Projectile : MonoBehaviour
         return Damage;
     }
 
-    // Update is called once per frame
-    void Update()
+    private void Start()
     {
-        transform.Translate(Speed * Time.deltaTime * Vector3.up);
+        GetComponent<Rigidbody>().AddRelativeForce(Speed * Vector3.up, ForceMode.Impulse);
     }
 }
