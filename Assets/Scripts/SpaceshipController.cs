@@ -7,6 +7,9 @@ public class SpaceshipController : MonoBehaviour
     private Spaceship spaceship;
     private Rigidbody spaceshipRigidbody;
 
+    private readonly float xBound = 9.1f;
+    private readonly float yBound = 5.1f;
+
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -33,13 +36,13 @@ public class SpaceshipController : MonoBehaviour
 
     private void Update()
     {
-        if (Math.Abs(transform.position.x) > 9.1f)
+        if (Math.Abs(transform.position.x) > xBound)
         {
-            transform.position = new(-(Math.Sign(transform.position.x) * 9.1f), transform.position.y, transform.position.z);
+            transform.position = new(-(Math.Sign(transform.position.x) * xBound), transform.position.y, transform.position.z);
         }
-        if (Math.Abs(transform.position.y) > 5.1f)
+        if (Math.Abs(transform.position.y) > yBound)
         {
-            transform.position = new(transform.position.x, -(Math.Sign(transform.position.y) * 5.1f), transform.position.z);
+            transform.position = new(transform.position.x, -(Math.Sign(transform.position.y) * yBound), transform.position.z);
         }
 
         if (Input.GetButtonDown("Jump"))

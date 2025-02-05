@@ -1,5 +1,3 @@
-using UnityEngine.Events;
-
 public class Spaceship : Entity
 {
     public FloatReference RotationSpeed;
