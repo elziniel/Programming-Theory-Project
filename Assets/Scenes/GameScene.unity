@@ -134,6 +134,7 @@ GameObject:
   - component: {fileID: 58260407}
   - component: {fileID: 58260402}
   - component: {fileID: 58260401}
+  - component: {fileID: 58260408}
   m_Layer: 0
   m_Name: Spaceship
   m_TagString: Untagged
@@ -198,7 +199,7 @@ MonoBehaviour:
       m_Calls: []
   RotationSpeed:
     UseConstant: 1
-    ConstantValue: 75
+    ConstantValue: 100
     Variable: {fileID: 0}
 --- !u!136 &58260403
 CapsuleCollider:
@@ -285,7 +286,7 @@ Transform:
   m_GameObject: {fileID: 58260400}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: -0.5}
+  m_LocalPosition: {x: 0, y: 0, z: -0.125}
   m_LocalScale: {x: 0.25, y: 0.25, z: 0.25}
   m_ConstrainProportionsScale: 1
   m_Children: []
@@ -318,6 +319,64 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!114 &58260408
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 58260400}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cb74c9554a217c04994b5451b40d24cb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  weapon: {fileID: 11400000, guid: fabab4723f1a7ce48a3de4c5a95ab846, type: 2}
+  projectile: {fileID: 4285598516730548619, guid: 1793deb7094ea5747b787cb3f1d4de18, type: 3}
+--- !u!1 &215603787
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 215603789}
+  - component: {fileID: 215603788}
+  m_Layer: 0
+  m_Name: MainManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &215603788
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 215603787}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 42f2a25ea8af3b546814ba412d2c43df, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!4 &215603789
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 215603787}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0.0018806383, y: 0.06690294, z: 0.2675291}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &330585543
 GameObject:
   m_ObjectHideFlags: 0
@@ -1103,7 +1162,7 @@ BoxCollider:
     serializedVersion: 2
     m_Bits: 0
   m_LayerOverridePriority: 0
-  m_IsTrigger: 1
+  m_IsTrigger: 0
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
@@ -1432,3 +1491,4 @@ SceneRoots:
   - {fileID: 1322834458}
   - {fileID: 58260406}
   - {fileID: 736178929}
+  - {fileID: 215603789}

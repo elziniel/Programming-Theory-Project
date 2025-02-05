@@ -1,3 +1,4 @@
+using System;
 #if UNITY_EDITOR
 using UnityEditor;
 #endif
@@ -35,10 +36,5 @@ public class CanvasManager : MonoBehaviour
         {
             SceneManager.LoadScene(currentScene + 1);
         }
-    }
-
-    public void UpdateText(string text, FloatReference value)
-    {
-
     }
 }

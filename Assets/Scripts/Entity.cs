@@ -16,6 +16,7 @@ public abstract class Entity : MonoBehaviour
         Health.SetValue(StartingHealth);
     }
 
+    // POLYMORPHISM
     public virtual void TakeDamage(float amount)
     {
         Health.ApplyChange(amount);
