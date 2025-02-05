@@ -1,3 +1,4 @@
+using System;
 using UnityEngine;
 
 [RequireComponent(typeof(Spaceship), typeof(Rigidbody))]
@@ -32,11 +33,18 @@ public class SpaceshipController : MonoBehaviour
 
     private void Update()
     {
+        if (Math.Abs(transform.position.x) > 9.1f)
+        {
+            transform.position = new(-(Math.Sign(transform.position.x) * 9.1f), transform.position.y, transform.position.z);
+        }
+        if (Math.Abs(transform.position.y) > 5.1f)
+        {
+            transform.position = new(transform.position.x, -(Math.Sign(transform.position.y) * 5.1f), transform.position.z);
+        }
+
         if (Input.GetButtonDown("Jump"))
         {
-            Debug.Log("Damage taken");
-            spaceship.Health.ApplyChange(-1);
-            spaceship.DamageEvent.Invoke();
+            // add shooting code
         }
     }
 

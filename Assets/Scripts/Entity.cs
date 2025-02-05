@@ -8,6 +8,7 @@ public abstract class Entity : MonoBehaviour
     public FloatReference Speed;
     public FloatReference DamageAmount;
 
+    public UnityEvent DamageEvent;
     public UnityEvent DeathEvent;
 
     private void Awake()
@@ -18,5 +19,6 @@ public abstract class Entity : MonoBehaviour
     public virtual void TakeDamage(float amount)
     {
         Health.ApplyChange(amount);
+        DamageEvent.Invoke();
     }
 }
