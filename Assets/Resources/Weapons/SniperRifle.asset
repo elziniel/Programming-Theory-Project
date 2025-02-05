@@ -24,7 +24,15 @@ MonoBehaviour:
     UseConstant: 1
     ConstantValue: 10
     Variable: {fileID: 0}
-  precision:
+  projectileAmount:
     UseConstant: 1
     ConstantValue: 1
+    Variable: {fileID: 0}
+  Damage:
+    UseConstant: 1
+    ConstantValue: 3
+    Variable: {fileID: 0}
+  precision:
+    UseConstant: 1
+    ConstantValue: 0
     Variable: {fileID: 0}

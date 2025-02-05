@@ -12,9 +12,14 @@ public class Weapon : MonoBehaviour
         if (Time.time > NextShotTime)
         {
             NextShotTime = Time.time + weapon.fireRate;
-            Projectile _projectile = Instantiate(projectile, shooter.position, shooter.rotation * Quaternion.Euler(new Vector3(0, 0, Random.Range(-weapon.precision, weapon.precision))));
-            _projectile.SetSpeed(weapon.travelSpeed);
-            Destroy(_projectile.gameObject, weapon.travelDistance / weapon.travelSpeed);
+            for (int i = 0; i < weapon.projectileAmount; i++)
+            {
+                Quaternion direction = shooter.rotation * Quaternion.Euler(new Vector3(0, 0, Random.Range(-weapon.precision, weapon.precision)));
+                Projectile _projectile = Instantiate(projectile, shooter.position, direction);
+                _projectile.SetSpeed(weapon.travelSpeed);
+                _projectile.SetDamage(weapon.Damage);
+                Destroy(_projectile.gameObject, weapon.travelDistance / weapon.travelSpeed);
+            }
         }
     }
 }
