@@ -39,6 +39,13 @@ public class SpaceshipController : MonoBehaviour
         {
             spaceship.TakeDamage(1.0f);
             entity.TakeDamage(weapon.weapon.Damage);
+
+            if (spaceship.Health.Value <= 0)
+            {
+                Debug.Log("event?");
+                spaceship.DeathEvent.Invoke();
+                Destroy(spaceship.gameObject);
+            }
         }
     }
 }
