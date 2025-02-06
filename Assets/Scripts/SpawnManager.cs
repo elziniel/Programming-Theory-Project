@@ -5,6 +5,7 @@ public class SpawnManager : MonoBehaviour
 {
     public GameObject spacerock;
     private float offset = 0.5f;
+    private float waitTime = 5.0f;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -17,7 +18,7 @@ public class SpawnManager : MonoBehaviour
         int health = Random.Range(1, 5);
         Instantiate(spacerock, SpawnPosition(), Quaternion.identity);
         spacerock.GetComponent<Spacerock>().Init(health);
-        yield return new WaitForSeconds(2);
+        yield return new WaitForSeconds(waitTime);
         StartCoroutine(SpawnSpacerock());
     }
 

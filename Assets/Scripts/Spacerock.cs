@@ -31,17 +31,22 @@ public class Spacerock : Entity
             Destroy(gameObject);
             DeathEvent.Invoke();
         }
-
-        transform.localScale = StartingSize * (Health.Value / StartingHealth.Value);
+        else
+        {
+            transform.localScale = StartingSize * (Health.Value / StartingHealth.Value);
+            //Instantiate(gameObject);
+            //Instantiate(gameObject);
+            //Destroy(gameObject);
+        }
     }
 
-    private void OnTriggerEnter(Collider other)
+    private void OnCollisionEnter(Collision other)
     {
-        if (other.TryGetComponent<Projectile>(out var projectile))
+        if (other.gameObject.TryGetComponent<Projectile>(out var projectile))
         {
             TakeDamage(projectile.GetDamage());
-            Vector3 collisionVector = transform.position - other.transform.position;
-            EntityRb.AddForce(Force * Time.fixedDeltaTime * collisionVector, ForceMode.Impulse);
+            //Vector3 collisionVector = transform.position - other.transform.position;
+            //EntityRb.AddForce(Force * Time.fixedDeltaTime * collisionVector, ForceMode.Impulse);
             Destroy(other.gameObject);
         }
     }

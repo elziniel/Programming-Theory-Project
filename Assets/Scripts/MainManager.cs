@@ -7,9 +7,13 @@ public class MainManager : MonoBehaviour
     public static MainManager Instance { get; private set; }
     public float xBound;
     public float yBound;
+    public WeaponType SpaceshipWeapon;
 
     private void Awake()
     {
+        xBound = Camera.main.ScreenToWorldPoint(new Vector3(Screen.width, Screen.height)).x;
+        yBound = Camera.main.ScreenToWorldPoint(new Vector3(Screen.width, Screen.height)).y;
+
         if (Instance != null)
         {
             Destroy(gameObject);
@@ -18,8 +22,5 @@ public class MainManager : MonoBehaviour
 
         Instance = this;
         DontDestroyOnLoad(gameObject);
-
-        xBound = Camera.main.ScreenToWorldPoint(new Vector3(Screen.width, Screen.height)).x;
-        yBound = Camera.main.ScreenToWorldPoint(new Vector3(Screen.width, Screen.height)).y;
     }
 }

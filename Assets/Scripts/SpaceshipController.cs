@@ -11,6 +11,7 @@ public class SpaceshipController : MonoBehaviour
     {
         spaceship = GetComponent<Spaceship>();
         weapon = GetComponent<Weapon>();
+        weapon.weapon = MainManager.Instance.SpaceshipWeapon;
     }
 
     // Update is called once per frame

@@ -6,11 +6,33 @@ using UnityEngine.SceneManagement;
 
 public class CanvasManager : MonoBehaviour
 {
+    public WeaponSelect weaponSelect;
     private int currentScene;
 
     private void Start()
     {
         currentScene = SceneManager.GetActiveScene().buildIndex;
+    }
+
+    private void OnEnable()
+    {
+        if (weaponSelect != null)
+        {
+            weaponSelect.onWeaponChanged += NewWeaponSelected;
+        }
+    }
+
+    private void OnDisable()
+    {
+        if (weaponSelect != null)
+        {
+            weaponSelect.onWeaponChanged -= NewWeaponSelected;
+        }
+    }
+
+    private void NewWeaponSelected(WeaponType weapon)
+    {
+        MainManager.Instance.SpaceshipWeapon = weapon;
     }
 
     public void PreviousScene()
