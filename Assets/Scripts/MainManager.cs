@@ -18,10 +18,7 @@ public class MainManager : MonoBehaviour
 
         Instance = this;
         DontDestroyOnLoad(gameObject);
-    }
 
-    private void Start()
-    {
         xBound = Camera.main.ScreenToWorldPoint(new Vector3(Screen.width, Screen.height)).x;
         yBound = Camera.main.ScreenToWorldPoint(new Vector3(Screen.width, Screen.height)).y;
     }

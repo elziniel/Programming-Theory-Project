@@ -5,7 +5,7 @@ using UnityEngine.Events;
 public abstract class Entity : MonoBehaviour
 {
     public FloatReference StartingHealth;
-    public FloatVariable Health;
+    public FloatReference Health;
     public FloatReference Speed;
 
     public UnityEvent DamageEvent;
@@ -15,14 +15,14 @@ public abstract class Entity : MonoBehaviour
 
     private void Awake()
     {
-        Health.SetValue(StartingHealth);
+        Health.Value = StartingHealth.Value;
         EntityRb = GetComponent<Rigidbody>();
     }
 
     // POLYMORPHISM
     public virtual void TakeDamage(float amount)
     {
-        Health.ApplyChange(-amount);
+        Health.Value -= amount;
         DamageEvent.Invoke();
     }
 }

@@ -16,6 +16,7 @@ public class FloatReference
     public float Value
     {
         get { return UseConstant ? ConstantValue : Variable.Value; }
+        set { if (UseConstant) ConstantValue = value; else Variable.SetValue(value); }
     }
 
     public static implicit operator float(FloatReference reference)
