@@ -17,6 +17,9 @@ public class SpaceshipController : MonoBehaviour
     void FixedUpdate()
     {
         spaceship.EntityRb.AddRelativeForce(Time.fixedDeltaTime * spaceship.Speed * Input.GetAxis("Vertical") * Vector3.up);
+        float xClamp = Mathf.Clamp(spaceship.EntityRb.linearVelocity.x, -spaceship.MaxVelocity, spaceship.MaxVelocity);
+        float yClamp = Mathf.Clamp(spaceship.EntityRb.linearVelocity.y, -spaceship.MaxVelocity, spaceship.MaxVelocity);
+        spaceship.EntityRb.linearVelocity = new Vector3(xClamp, yClamp);
     }
 
     private void Update()

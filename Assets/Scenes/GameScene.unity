@@ -172,9 +172,9 @@ MonoBehaviour:
     ConstantValue: 3
     Variable: {fileID: 0}
   Health:
-    UseConstant: 1
+    UseConstant: 0
     ConstantValue: 0
-    Variable: {fileID: 0}
+    Variable: {fileID: 11400000, guid: b839cde8e2d366c4aac4089c080f3e5f, type: 2}
   Speed:
     UseConstant: 1
     ConstantValue: 50
@@ -200,6 +200,10 @@ MonoBehaviour:
   RotationSpeed:
     UseConstant: 1
     ConstantValue: 100
+    Variable: {fileID: 0}
+  MaxVelocity:
+    UseConstant: 1
+    ConstantValue: 1
     Variable: {fileID: 0}
 --- !u!136 &58260403
 CapsuleCollider:

@@ -2,6 +2,7 @@
 public class Spaceship : Entity
 {
     public FloatReference RotationSpeed;
+    public FloatReference MaxVelocity;
 
     public override void TakeDamage(float amount)
     {

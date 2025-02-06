@@ -14,6 +14,12 @@ public class ScreenWrap : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        CheckBounds();
+    }
+
+    // ABSTRACTION
+    private void CheckBounds()
+    {
         if (transform.position.x <= -MainManager.Instance.xBound && entityRb.linearVelocity.x < 0)
         {
             transform.position = new Vector3(MainManager.Instance.xBound, transform.position.y, transform.position.z);
